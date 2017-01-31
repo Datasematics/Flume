@@ -1,0 +1,21 @@
+Problem Statement: 
+Fetch data from Syslog and store it in HDFS using Apache Flume.
+ 
+Tags: 
+Sources, sinks, channels and Syslog.
+
+Use cases:
+Sample test to check flume functionality and hdfs.  
+
+Description: 
+Creating an application where syslog are stored in HDFS using Flume for Data Analysis.
+
+Execution Steps:
+Command to execute is :
+bin/flume-ng agent a1 --conf ./conf –conf-file ./conf/example.conf
+
+External references: 
+
+1.	https://flume.apache.org/FlumeUserGuide.html#netcat-source
+2.	https://flume.apache.org/FlumeUserGuide.html#syslog-sources
+
