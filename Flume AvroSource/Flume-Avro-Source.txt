@@ -1,0 +1,23 @@
+Flume Avro Source
+
+Problem Statement: 
+ which takes input in avro format to hdfs.
+
+Tags :
+Kafka, source, sink, connectorand channels.
+
+Use cases: 
+The API allows applicationswhich takes input in avro format to hdfs.
+
+Description :
+A simple flume which takes input in avro format to hdfs. 
+
+
+Execution Steps: 
+	Create a file with .conf extension
+	To run flume file, cmd
+/usr/bin/flume-ng agent –n agent_name –c conf –f  /FlumeAvroSource.conf
+
+
+
+
