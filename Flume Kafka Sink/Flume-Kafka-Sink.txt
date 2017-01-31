@@ -1,0 +1,34 @@
+Flume Kafka Sink
+
+Problem Statement: 
+To ingest data into kafka from hdfs using flume.
+
+Tags :
+Kafka, source, sink, connector,hdfs and channels.
+
+Use cases: 
+The API allows applications to send streams of data from hdfs to kafka using flume.
+
+Description :
+A simple flume which sends data from hdfs to kafka topic. 
+
+Execution Steps:
+
+	Create a file with .conf extension
+	To run flume file, cmd
+/usr/bin/flume-ng agent –n agent_name –c conf –f  /FlumeKafkaSink.conf
+
+Note : Before you execute this code make sure topic is created in kafka if not follow the below commands to create topic.
+i)	To create topic :
+     /usr/bin/kafka-topics –create –zookeeper localhost:2181 –partitions 1 –replication-factor 1 -topics  topic_name
+
+ii)	To list the created topic 
+/usr/bin/kafka-topics –zookeeper localhost:2181 –list
+
+
+Known Issues: 
+1.	Make sure first zookeeper and kafka server are running.
+
+External references: 
+1.	https://www.cloudera.com/documentation/kafka/latest/topics/kafka_flume.html
+
