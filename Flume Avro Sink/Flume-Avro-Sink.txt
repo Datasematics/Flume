@@ -1,26 +1,20 @@
-Flume hbase Sink
+Flume avro Sink
 
 Problem Statement: 
-To Ingest data into avro from netcat.
+To Ingest data into avro from hdfs.
 
 Tags :
-Kafka, source, sink, connector,netcat and channels.
+Kafka, source, sink, connector,hdfs and channels.
 
 Use cases: 
-The API allows applications to send streams of data from netcat to hbase using flume .
+The API allows applications to send data from hdfs and stores in avro format using flume.
 
 Description :
-A simple flume which sends data from netcat to hbase. 
+A simple flume which sends data from hdfs and stores in avro format using flume.
 
 Execution Steps: 
 	Create a file with .conf extension
 	To run flume file, cmd
-/usr/bin/flume-ng agent –n agent_name –c conf –f  /example.conf
+/usr/bin/flume-ng agent –n agent_name –c conf –f  /FlumeAvroSink.conf
 
-Note : Before you execute this code make sure table is created in hbase if not follow the below commands to create table.
-i)	To create table :
-Create ‘table_name’,’column_family’
-
-ii)	To list the created table 
-list 
 
