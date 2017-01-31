@@ -1,0 +1,33 @@
+Flume hive Sink
+
+Problem Statement: 
+To Ingest data into hive  from hdfs.
+
+Tags :
+Kafka, source, sink, connector,netcat,hive and channels.
+
+Use cases: 
+The API allows applications to send streams of data from hdfs to hive using flume .
+
+Description :
+A simple flume which sends data from hdfs to hive. 
+
+Execution Steps: 
+	Create a file with .conf extension
+	To run flume file, cmd
+/usr/bin/flume-ng agent –n agent_name –c conf –f  /FlumeHiveSink.conf
+
+Note : Before you execute this code make sure table is created in hbase if not follow the below commands to create table.
+i)	To create table :
+Create table table_name (id int,message String);
+
+ii)	To list the created table 
+Show tables;
+
+
+Known Issues: 
+1.	Make sure hive table is created and specify the same field names in the conf file.
+
+External references: 
+1.	https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_RelNotes/content / ch01s08s02.html
+2.	http://henning.kropponline.de/2015/05/19/hivesink-for-flume/
