@@ -1,0 +1,23 @@
+Flume Spool Directory source
+
+Problem Statement: 
+To Ingest data into hdfs  from spool directory.
+
+Tags :
+Kafka, source, sink, connector,spool_directory and channels.
+
+Use cases: 
+The API allows applications to send data from spool directory to hdfs using flume .
+
+Description :
+A simple flume which sends data from spool directory to hdfs. 
+
+Execution Steps: 
+	Create a file with .conf extension
+	To run flume file, cmd
+/usr/bin/flume-ng agent –n agent_name –c conf –f  /example.conf
+
+External references: 
+1.	https://community.cloudera.com/t5/Data-Ingestion-Integration/Move-files-from-a-spooling-directory-to-HDFS-with-flume/td-p/23135
+2.	https://acadgild.com/blog/loading-files-into-hdfs-using-flumes-spool-directory/
+
