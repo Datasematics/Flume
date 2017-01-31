@@ -1,0 +1,40 @@
+Problem Statement: 
+Use confluent kafka topic as a source to a flume and then store it in HDFS.
+
+Tags :
+KafkaConsumer, kafka topic, HDFS, flume, Avro and Topic. 
+
+Description :
+Apache Flume is a distributed, reliable, and available system for efficiently collecting, aggregating and moving large amounts of log data from many different sources to a centralized data store.
+Confluent kafka producer pushes the data to kafka topic, this kafka topic is taken as source to flume and sink as a HDFS.
+
+Execution Steps:
+
+Pre requisites :
+1.	Confluent kakfa 3.0.0
+2.	Flume 1.6.0
+
+1.	Create confluent topic and put some sample data into the kakfa topic before that start these services 
+  ->./bin/zookeeper-server-start ./etc/kafka/zookeeper.properties
+  -> ./bin/kafka-server-start ./etc/kafka/server.properties
+  -> ./bin/schema-registry-start ./etc/schema-registry/schema-registry.properties
+
+2.	Create confluent topic
+  -> ./bin/kafka-avro-console-producer \
+     --broker-list localhost:9092 --topic test \
+     --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}'
+
+Once started, the process will wait for you to enter messages, one per line, and will send them immediately when you hit the Enter key. Try entering a couple of messages:
+{"f1": "value1"}
+{"f1": "value2"}
+{"f1": "value3"}
+
+3.Check the topic for data 
+ -> ./bin/kafka-avro-console-consumer \
+             --zookeeper localhost:2181 --topic test –from-beginning
+
+4.	Then execute the above code 
+	flume-ng agent name agentname –conf ./path/to/flume/conf/folder/ --conf-file ./path/to/flume/conf/file
+
+
+
