@@ -1,0 +1,39 @@
+Problem Statement: 
+Fetch data from Twitter service and store it in HDFS using Apache Flume.
+ 
+Tags: 
+Sources, sinks, channels and Twitter.
+
+Use cases:
+Sample test to check flume functionality and hdfs.  
+
+Description: 
+Create an application and get the tweets from it using the experimental twitter source provided by Apache Flume.
+Experimental source that connects via Streaming API to the 1% sample twitter firehose, continously downloads tweets, 
+converts them to Avro format and sends Avro events to a downstream Flume sink.Requires the consumer and access tokens and secrets of a Twitter developer account
+
+
+Execution Steps:
+
+Create a Twitter application:
+
+1.	To create a Twitter application, click on the following link https://apps.twitter.com/.
+
+2.	Click on the Create New App button. You will be redirected to a window where you will get an application form in which you have to fill in your details.
+
+3.	Fill in the details, accept the Developer Agreement AND YOUR APP WILL BE READY.
+
+4.	Under keys and Access Tokens tab at the bottom of the page, you can observe a button named Create my access token.
+
+5.	Click on the Test OAuth U WILL FIND Consumer key, Consumer secret, Access token, and Access token secret.
+
+
+Command to execute is 
+
+bin/flume-ng agent --conf ./conf/ -f conf/twitter.conf Dflume.root.logger=DEBUG,console -n TwitterAgent
+
+
+External references: 
+
+https://flume.apache.org/FlumeUserGuide.html#netcat-source
+
